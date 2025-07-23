@@ -4,6 +4,7 @@ import 'package:ulearning/common/values/colors.dart';
 import '../Log_in/widget/text_input_widget.dart';
 import '../main/main_screen.dart';
 import '../main/widget/heading_text_widget.dart';
+import '../main/widget/search_widget.dart';
 
 class MyCourses extends StatelessWidget {
   const MyCourses({super.key});
@@ -54,44 +55,35 @@ class MyCourses extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/images/art.jpeg'
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                        borderRadius: BorderRadius.circular(20)
-                    ),),
-                    Container(
-                      width: size.width * 0.60,
-                      // width: double.maxFinite,
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Visual Identity', style: TextStyle(
-                                  fontWeight: FontWeight.bold
-                                ),),
-                                Text('20/35 Lessons', style: TextStyle(
-                                  color: AppColors.primaryThreeElementText
-                                ),),
-                              ],
+                    Row(
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              'assets/images/art.jpeg'
                             ),
+                            fit: BoxFit.cover,
                           ),
-                          Spacer(),
-                          Text('\$700', style: TextStyle(
-                              fontWeight: FontWeight.bold
-                          ),)
-                        ],
-                      ),
+                            borderRadius: BorderRadius.circular(20)
+                        ),),
+                        SizedBox(width: 20,),
+                        Column(
+                          children: [
+                            Text("data"),
+                            Text("data")
+                          ],
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text('\$700')
+                      ],
                     )
                   ],
                 ),
