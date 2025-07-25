@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning/app_event.dart';
+import 'package:ulearning/pages/all_courses/all_courses.dart';
+import 'package:ulearning/pages/courses_detail/courses_details.dart';
+import 'package:ulearning/pages/home/home_screen.dart';
 import 'package:ulearning/pages/log_in/Log_in.dart';
+import 'package:ulearning/pages/main/main_screen.dart';
+import 'package:ulearning/pages/my_courses/my_courses.dart';
+import 'package:ulearning/pages/profile/profile_screen.dart';
+import 'package:ulearning/pages/search_screen/search_screen.dart';
 import 'package:ulearning/pages/welcome/welcome.dart';
+import 'package:ulearning/utils/AppRoutes.dart';
 
 import 'app_blocs.dart';
 import 'app_state.dart';
@@ -18,20 +26,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return MaterialApp(
       // create: (context) => AppBlocs(),
-      create: (context) => AppBlocs(),
-      child: ScreenUtilInit(
-        builder: (context, child)=> const MaterialApp(
+      // create: (context) => AppBlocs(),
           debugShowCheckedModeBanner: false,
           // home: MyHomePage(title: 'Flutter demo page'),
-          home: Welcome(),
+          // home: Welcome(),
           // home: SignIn(),
-          routes: {
-            // 'signIn': (context) => SignIn();
-          },
-      )
-      ),
+          // home: MainScreen(),
+          home:HomeScreen(),
+            routes: {
+              // '/': (context) => const BottomBar(),
+              AppRoutes.homeScreen:(BuildContext context) => const HomeScreen(),
+              AppRoutes.profileScreen: (context) => const ProfileScreen(),
+              AppRoutes.logIn: (context) => const LogIn(),
+              AppRoutes.coursesDetail: (context) => const CoursesDetail(),
+              AppRoutes.myCourses: (context) => const MyCourses(),
+              '/all_courses': (context) => const AllCourses(),
+              AppRoutes.searchScreen: (context) =>const SearchScreen()
+          }
     );
   }
 }
