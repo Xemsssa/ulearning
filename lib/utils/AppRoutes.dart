@@ -5,4 +5,5 @@ class AppRoutes{
   static const logIn = '/log_in';
   static const coursesDetail = '/courses_detail';
   static const myCourses = '/my_courses';
+  static const searchScreen = '/search_screen';
 }
